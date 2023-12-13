@@ -9,4 +9,6 @@ connectDb();
 app.use(json());
 app.use(authRouter)
 
-app.listen(5000, () => console.log('server listening in port 5000'));
+const port = process.env.PORT;
+
+app.listen(port, () => console.log(`server listening in port ${port}`));
