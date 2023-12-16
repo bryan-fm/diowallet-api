@@ -14,9 +14,9 @@ transactionRouter.post('/transactions', validationSchemaMiddleWare(CreateTransac
 
 transactionRouter.get('/transactions',  transactionController.findAllByUser)
 
-transactionRouter.post('/transactions/remove/:id', validationSchemaByParamsMiddleWare(IdParam),  transactionController.remove)
+transactionRouter.delete('/transactions/remove/:id', validationSchemaByParamsMiddleWare(IdParam),  transactionController.remove)
 
-transactionRouter.post(
+transactionRouter.patch(
     '/transactions/update/:id', 
     validationSchemaByParamsMiddleWare(IdParam),
     validationSchemaMiddleWare(UpdateTransaction),
